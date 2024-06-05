@@ -1,7 +1,5 @@
 # KORISNIČKA PRIČA
 
-----------------------
-
 ## * Kao korisnik želim da dodam knjigu koristeći atribute kao što su naslov, autor, godinu izdavanja i žanr knjige, dok će sve to biti sačuvano na nekoj listi.
 
 ## * Kao korisnik želim da pretražim knjige iz svoje digitalne biblioteke po naslovu, autoru, godni izdavanja ili žanru i da mi se prikažu.
