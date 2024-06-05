@@ -1,9 +1,13 @@
+import os
 from library import Biblioteka
 from book import Knjiga
 biblioteka = Biblioteka()
+file_path = "listaknjiga.txt"
+temp_file_path = "listaknjiga_temp.txt"
+
 
 while True:   
-    print("\n DOBRODOŠLI U DIGITALNU BIBLIOTEKU! \n ŠTA ŽELITE PRVO DA URADITE?: \n 1-ZA DODAVANJE KNJIGE U BIBLIOTEKU \n 2-ZA PRIKAZ KNJIGA \n 3-ZA IZMENU KNJIGE IZ BIBLIOTEKE \n 4-ZA PRIKAZ SVIH KNJIGA  \n 0-ZA IZLAZ IZ BIBLIOTEKE")
+    print("\n DOBRODOŠLI U DIGITALNU BIBLIOTEKU! \n ŠTA ŽELITE PRVO DA URADITE?: \n 1-ZA DODAVANJE KNJIGE U BIBLIOTEKU \n 2-ZA PRIKAZ KNJIGA \n 3-ZA IZMENU KNJIGE IZ BIBLIOTEKE \n 4-ZA BRISANJE KNJIGA  \n 0-ZA IZLAZ IZ BIBLIOTEKE")
     unos= input()
 
     if unos =="1":
@@ -53,7 +57,25 @@ while True:
         lines = [knjiga1.display_info() + '\n' if knjiga.display_info() in line else line for line in lines]
         with open("listaknjiga.txt", "w") as file:
             file.writelines(lines)
+    
+    elif unos == "4":
+        print("NAPIŠITE ODGOVARAJUĆE INFORMACIJE KNJIGE KOJU ŽELITE DA OBRIŠETE")
+        naslov = input("NASLOV: ")
+        autor = input("AUTOR: ")
+        godina_izdavanja = input("GODINA IZDAVANJA: ")
+        žanr = input("ŽANR: ")
+        knjiga = Knjiga(naslov, autor, godina_izdavanja, žanr)
+        with open("listaknjiga.txt", "r") as file:
+            lines = file.readlines()
             
+        with open("listaknjiga_temp.txt", "w") as temp_file:
+            for line in lines:
+                if line.strip() != knjiga.display_info().strip():
+                    temp_file.write(line)
+        os.replace(temp_file_path, file_path)
+
+                
+        
     elif unos == "0":
         break
     
