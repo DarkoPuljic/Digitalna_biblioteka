@@ -7,7 +7,7 @@ temp_file_path = "listaknjiga_temp.txt"
 
 
 while True:   
-    print("\n DOBRODOŠLI U DIGITALNU BIBLIOTEKU! \n ŠTA ŽELITE PRVO DA URADITE?: \n 1-ZA DODAVANJE KNJIGE U BIBLIOTEKU \n 2-ZA PRIKAZ KNJIGA \n 3-ZA IZMENU KNJIGE IZ BIBLIOTEKE \n 4-ZA BRISANJE KNJIGA  \n 0-ZA IZLAZ IZ BIBLIOTEKE")
+    print("\n------------------\n DOBRODOŠLI U DIGITALNU BIBLIOTEKU! \n ------------------ \n ŠTA ŽELITE PRVO DA URADITE?: \n ------------------ \n 1-ZA DODAVANJE KNJIGE U BIBLIOTEKU \n ------------------ \n 2-ZA PRIKAZ KNJIGA \n ------------------ \n 3-ZA IZMENU KNJIGE IZ BIBLIOTEKE \n ------------------ \n 4-ZA BRISANJE KNJIGA \n ------------------  \n 0-ZA IZLAZ IZ BIBLIOTEKE")
     unos= input()
 
     if unos =="1":
