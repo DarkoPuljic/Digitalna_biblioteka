@@ -9,11 +9,11 @@ while True:
     if unos =="1":
         while True:
             print("MOLIMO VAS DA NAPIŠETE ODGOVARAJUĆE INFORMACIJE O KNJIZI KOJU ŽELITE DA DODATE!")
-            naziv = input("NAZIV: ")
+            naslov = input("NASLOV: ")
             autor = input("AUTOR: ")
-            god_izdanja = input("GODINA IZDANJA: ")
+            godina_izdavanja = input("GODINA IZDANJA: ")
             žanr = input("ŽANR: ")
-            knjiga = Knjiga(naziv, autor, god_izdanja, žanr)
+            knjiga = Knjiga(naslov, autor, godina_izdavanja, žanr)
             biblioteka.dodaj_knjigu(knjiga)
             unos = input("AKO ŽELITE DA PREKINETE UNOS KNJIGA PRITISNITE ENTER")
             with open("listaknjiga.txt", "a") as file:
@@ -26,11 +26,34 @@ while True:
 
     elif unos == "2":
         kriterjum = input("PO ČEMU ŽELITE PRETRAGU?")
-        uslov= input("Kljucna rec za pretragu: ")
+        uslov= input("USLOV ZA PRETRAGU: ")
         lista = biblioteka.pretraga_knjige(kriterjum, uslov)
-        print("Rezultati pretrage: ")
+        print("REZULTATI PRETRAGE: ")
         for result in lista:
             print(result)
             
+    elif unos == "3":
+        print("Napisi informacije o knjizi koju zelite da izmenite.")
+        naslov = input("NASLOV: ")
+        autor = input("AUTOR: ")
+        godina_izdavanja = input("GODINA IZDAVANJA: ")
+        žanr = input("ŽANR: ")
+        knjiga = Knjiga(naslov, autor, godina_izdavanja, žanr)
+
+        print("Napisi informacije o izmenjenoj knjizi.")
+        naslov1 = input("NASLOV: ")
+        autor1 = input("AUTOR: ")
+        godina_izdavanja1 = input("GODINA IZDAVANJA: ")
+        žanr1 = input("ŽANR: ")
+        knjiga1 = Knjiga(naslov1, autor1, godina_izdavanja1, žanr1)
+
+        with open("listaknjiga.txt", "r") as file:
+            lines = file.readlines()
+    
+        lines = [knjiga1.display_info() + '\n' if knjiga.display_info() in line else line for line in lines]
+        with open("listaknjiga.txt", "w") as file:
+            file.writelines(lines)
+            
     elif unos == "0":
         break
+    
