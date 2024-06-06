@@ -29,7 +29,7 @@ while True:
             
 
     elif unos == "2":
-        kriterjum = input("PO ČEMU ŽELITE PRETRAGU?")
+        kriterjum = input("PO ČEMU ŽELITE PRETRAGU (naslov, autor, godina_izdavanja, zanr?")
         uslov= input("USLOV ZA PRETRAGU: ")
         lista = biblioteka.pretraga_knjige(kriterjum, uslov)
         print("REZULTATI PRETRAGE: ")

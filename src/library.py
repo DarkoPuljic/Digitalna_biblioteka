@@ -19,7 +19,7 @@ class Biblioteka:
                     lista.append(book_data)
                 elif kriterijum.lower() == "autor" and uslov.lower() in book_data[1].lower():
                     lista.append(book_data)
-                elif kriterijum.lower() == "godina" and uslov == book_data[2]:
+                elif kriterijum.lower() == "godina_izdavanja" and uslov == book_data[2]:
                     lista.append(book_data)
                 elif kriterijum.lower() == "zanr" and uslov.lower() in book_data[3].lower():
                     lista.append(book_data)
