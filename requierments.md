@@ -1,8 +1,7 @@
 # Tehnički Zahtevi
 
 ## 1 Dodavanje knjige
-* Omogućiti korisnicima da dodaju novu knjigu unosom njenog naslova,
-autora, godine izdavanja i žanra. Podaci o knjigama treba da se čuvaju u odgovarajućoj strukturi podataka (npr. lista ili dictionary).
+* Omogućiti korisnicima da dodaju novu knjigu unosom njenog naslova, autora, godine izdavanja i žanra. Podaci o knjigama treba da se čuvaju u odgovarajućoj strukturi podataka (npr. lista ili dictionary).
 
 ## 2. Pretraga knjiga
 * Omogućiti korisnicima pretragu knjiga po naslovu, autoru, godini izdavanja ili žanru. Rezultati pretrage treba da budu prikazani korisnicima.
